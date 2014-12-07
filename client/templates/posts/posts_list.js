@@ -1,1 +1,1 @@
-// get posts datavar postsData = [  {    title: 'Star Wars: The Force Awakens',    url: 'http://youtu.be/OMOVFvcNfvE'  },  {    title: 'The Godfather',    url: 'http://youtu.be/sY1S34973zA'  },  {    title: 'Little Accidents',    url: 'http://trailers.apple.com/trailers/independent/littleaccidents/'  }];Template.postsList.helpers({  posts: postsData});
+Template.postsList.helpers({  posts: function() {    return Posts.find();  }});

@@ -1,0 +1,1 @@
+if (Posts.find().count() === 0) {  Posts.insert({      title: 'Star Wars: The Force Awakens',      url: 'http://youtu.be/OMOVFvcNfvE'    });    Posts.insert({      title: 'The Godfather',      url: 'http://youtu.be/sY1S34973zA'  });    Posts.insert({      title: 'Little Accidents',      url: 'http://trailers.apple.com/trailers/independent/littleaccidents/'  });}
