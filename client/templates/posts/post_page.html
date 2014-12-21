@@ -6,4 +6,10 @@
       {{> commentItem}}
     {{/each}}
   </ul>
+
+  {{#if currentUser}}
+    {{> commentSubmit}}
+  {{else}}
+    <p>Sign in with twitter to post a comment</p>
+  {{/if}}
 </template>
