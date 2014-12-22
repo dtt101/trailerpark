@@ -7,4 +7,9 @@
     {{#if currentUser}}<a href="{{pathFor 'postSubmit'}}">Submit trailer</a>{{/if}}
     {{> loginButtons}}
   </div>
+  <ul>
+    <li class="dropdown">
+      {{> notifications}}
+    </li>
+  </ul>
 </template>
