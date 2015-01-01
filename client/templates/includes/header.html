@@ -3,8 +3,17 @@
     <div class="logo">Trailer <span class="star">&#9734;</span> Park</div>
   </div>
   <div>
-    <a href="{{pathFor 'postsList'}}">Latest</a>
-    {{#if currentUser}}<a href="{{pathFor 'postSubmit'}}">Submit trailer</a>{{/if}}
+    <span class="{{activeRouteClass 'home' 'newPosts'}}">
+      <a href="{{pathFor 'newPosts'}}">Latest</a> |
+    </span>
+    <span class="{{activeRouteClass 'bestPosts'}}">
+      <a href="{{pathFor 'bestPosts'}}">Popular</a> |
+    </span>
+    {{#if currentUser}}
+      <span class="{{activeRouteClass 'postSubmit'}}">
+        <a href="{{pathFor 'postSubmit'}}">Submit trailer</a>
+      </span>
+    {{/if}}
     {{> loginButtons}}
   </div>
   <ul>
