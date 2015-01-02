@@ -1,24 +1,33 @@
 <template name="header">
-  <div class="text-center header clearfix">
-    <h1>Trailer Park</h1>
+  <div class="row">
+    <div class="col-md-3">About</div>
+    <div class="col-md-6 header">
+      <h1 class="text-center">Trailer Park</h1>
+    </div>
+    <div class="col-md-3">
+      <div class="pull-right">
+        {{> loginButtons}}
+        <ul>
+          <li class="dropdown">
+            {{> notifications}}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div>
-    <span class="{{activeRouteClass 'home' 'newPosts'}}">
-      <a href="{{pathFor 'newPosts'}}">Latest</a> |
-    </span>
-    <span class="{{activeRouteClass 'bestPosts'}}">
-      <a href="{{pathFor 'bestPosts'}}">Popular</a> |
-    </span>
-    {{#if currentUser}}
-      <span class="{{activeRouteClass 'postSubmit'}}">
-        <a href="{{pathFor 'postSubmit'}}">Submit trailer</a>
+  <div class="row">
+    <div class="col-md-8 text-center col-md-offset-2">
+      <span class="{{activeRouteClass 'home' 'newPosts'}}">
+        <a href="{{pathFor 'newPosts'}}">Latest</a> |
       </span>
-    {{/if}}
-    {{> loginButtons}}
+      <span class="{{activeRouteClass 'bestPosts'}}">
+        <a href="{{pathFor 'bestPosts'}}">Popular</a> |
+      </span>
+      {{#if currentUser}}
+        <span class="{{activeRouteClass 'postSubmit'}}">
+          <a href="{{pathFor 'postSubmit'}}">Submit trailer</a>
+        </span>
+      {{/if}}
+    </div>
   </div>
-  <ul>
-    <li class="dropdown">
-      {{> notifications}}
-    </li>
-  </ul>
 </template>
