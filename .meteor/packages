@@ -9,6 +9,6 @@ underscore
 less
 iron:router
 sacha:spin
-accounts-ui
+accounts-ui-unstyled
 accounts-twitter
 service-configuration
