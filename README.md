@@ -3,7 +3,12 @@
 ## Development
 
 ```
-meteor
+meteor --settings settings.json
+```
+
+To debug server-side code with node-inspector
+```
+NODE_OPTIONS='--debug-brk' meteor --settings settings.json
 ```
 
 ## Authentication
