@@ -12,3 +12,5 @@ sacha:spin
 accounts-ui-unstyled
 accounts-twitter
 service-configuration
+http
+embedly
