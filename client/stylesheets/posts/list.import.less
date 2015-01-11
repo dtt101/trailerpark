@@ -8,4 +8,17 @@ div.posts {
       width: 200px;
     }
   }
+
+  a.vote-link .glyphicon-heart {
+    display: none;
+  }
+
+  a.vote-link.disabled {
+    .glyphicon-heart-empty {
+      display: none;
+    }
+    .glyphicon-heart {
+      display: block;
+    }
+  }
 }
