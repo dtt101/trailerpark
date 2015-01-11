@@ -25,7 +25,7 @@ Template.commentSubmit.events({
 
     var errors = {};
 
-    if (! comment.body) {
+    if (!comment.body) {
       errors.body = "Please write some content";
       return Session.set('commentSubmitErrors', errors);
     }
