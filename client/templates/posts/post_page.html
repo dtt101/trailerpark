@@ -1,6 +1,9 @@
 <template name="postPage">
   {{> postItem}}
-
+  {{#if isVideo}}
+    THIS HAS EMBED CODE
+    <p>{{{html}}}</p>
+  {{/if}}
   <ul class="comments">
     {{#each comments}}
       {{> commentItem}}
