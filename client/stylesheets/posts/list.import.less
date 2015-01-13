@@ -9,16 +9,11 @@ div.posts {
     }
   }
 
-  a.vote-link .glyphicon-heart {
-    display: none;
+  a.vote-link {
+    cursor: default;
   }
 
-  a.vote-link.disabled {
-    .glyphicon-heart-empty {
-      display: none;
-    }
-    .glyphicon-heart {
-      display: block;
-    }
+  a.vote-link.upvotable {
+    cursor: pointer;
   }
 }
