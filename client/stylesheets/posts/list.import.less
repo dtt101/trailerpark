@@ -1,19 +1,31 @@
 // posts list styles
 div.posts {
-  margin-top: 30px;
 
-  div.media {
-    margin-top: 30px;
-    img.thumb {
-      width: 200px;
-    }
-  }
+}
 
-  a.vote-link {
-    cursor: default;
+div.square {
+  background-color: @pink;
+  float:left;
+  position: relative;
+  width: 20%;
+  padding-bottom: 20%; /* = width for a 1:1 aspect ratio */
+  margin:0;
+  overflow:hidden;
+  div.square-inner {
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
   }
+  img.thumb {
+    width: 50px;
+  }
+}
 
-  a.vote-link.upvotable {
-    cursor: pointer;
-  }
+a.vote-link {
+  cursor: default;
+}
+
+a.vote-link.upvotable {
+  cursor: pointer;
 }
