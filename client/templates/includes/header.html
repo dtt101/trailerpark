@@ -1,17 +1,7 @@
 <template name="header">
   <div class="header square">
     <div class="square-inner">
-      <h1><span class="first-word">Trailer</span> <span class="second-word"><span>P</span>ark</span></h1>
-      {{#if currentUser}}
-        <a href="#" class="btn-link" id="logout">Logout</a>
-        <ul>
-          <li class="dropdown">
-            {{> notifications}}
-          </li>
-        </ul>
-      {{else}}
-        <a href="#" id="twitterLogin">Login with twitter</a>
-      {{/if}}
+      <h1>Trailer Park</h1>
       <span class="{{activeRouteClass 'home' 'newPosts'}}">
         <a href="{{pathFor 'newPosts'}}">Latest</a> |
       </span>
@@ -19,9 +9,17 @@
         <a href="{{pathFor 'bestPosts'}}">Popular</a> |
       </span>
       {{#if currentUser}}
+        <a href="#" class="btn-link" id="logout">Logout</a>
+        <ul>
+          <li class="dropdown">
+            {{> notifications}}
+          </li>
+        </ul>
         <span class="{{activeRouteClass 'postSubmit'}}">
           <a href="{{pathFor 'postSubmit'}}">Submit trailer</a>
         </span>
+      {{else}}
+        <a href="#" id="twitterLogin">Login with twitter</a>
       {{/if}}
     </div>
   </div>

@@ -1,15 +1,13 @@
 <template name="postPage">
-
-    <img class="thumb" src="{{thumbnail_url}}" alt="{{title}}">
-    <h2>{{title}}</h2>
-    <a href="{{url}}">{{domain}}</a>
-    <p>
-      <a href="#" class="vote-link {{upvotedClass}}">
-        Love
-      </a>
-      {{pluralize votes "love"}}
-    </p>
-
+  <h2>{{title}}</h2>
+  <img class="thumb" src="{{thumbnail_url}}" alt="{{title}}">
+  <a href="{{url}}">{{domain}}</a>
+  <p>
+    <a href="#" class="vote-link {{upvotedClass}}">
+      Love
+    </a>
+    {{pluralize votes "love"}}
+  </p>
   {{#if isVideo}}
     THIS HAS EMBED CODE
     <p>{{{html}}}</p>
