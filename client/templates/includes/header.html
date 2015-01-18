@@ -3,23 +3,25 @@
     <div class="square-inner">
       <h1>Trailer Park</h1>
       <span class="{{activeRouteClass 'home' 'newPosts'}}">
-        <a href="{{pathFor 'newPosts'}}">Latest</a> |
+        <a href="{{pathFor 'newPosts'}}"><i class="fa fa-newspaper-o"></i></a>
       </span>
       <span class="{{activeRouteClass 'bestPosts'}}">
-        <a href="{{pathFor 'bestPosts'}}">Popular</a> |
+        <a href="{{pathFor 'bestPosts'}}"><i class="fa fa-line-chart"></i></a>
       </span>
       {{#if currentUser}}
-        <a href="#" class="btn-link" id="logout">Logout</a>
+        <span class="{{activeRouteClass 'postSubmit'}}">
+          <a href="{{pathFor 'postSubmit'}}"><i class="fa fa-file-video-o"></i></a>
+        </span>
+        <span>
+          <a href="#" class="btn-link" id="logout"><i class="fa fa-sign-out"></i></a>
+        </span>
         <ul>
           <li class="dropdown">
             {{> notifications}}
           </li>
         </ul>
-        <span class="{{activeRouteClass 'postSubmit'}}">
-          <a href="{{pathFor 'postSubmit'}}">Submit trailer</a>
-        </span>
       {{else}}
-        <a href="#" id="twitterLogin">Login with twitter</a>
+        <a href="#" id="twitterLogin"><i class="fa fa-sign-in"></i></a>
       {{/if}}
     </div>
   </div>
