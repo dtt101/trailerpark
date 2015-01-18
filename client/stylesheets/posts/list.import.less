@@ -1,9 +1,25 @@
 // posts list styles
 div.post-content {
+  position: relative;
+  display: block;
   h3 {
     margin: 0;
     text-transform:uppercase;
   }
+}
+a.vote-link {
+  cursor: default;
+}
+
+a.vote-link.upvotable {
+  cursor: pointer;
+}
+
+div.paging {
+  visibility: visible;
+  opacity: 1.0;
+}
+div.postitem {
   .heart,
   .comment {
     position: absolute;
@@ -15,11 +31,4 @@ div.post-content {
     left: auto;
     right: 15px;
   }
-}
-a.vote-link {
-  cursor: default;
-}
-
-a.vote-link.upvotable {
-  cursor: pointer;
 }
