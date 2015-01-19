@@ -1,5 +1,5 @@
 Template.postPage.rendered = function() {
-  $('body').css('background', 'rgba(' + this.data.bgcolour + ',0.2)');
+  $('body').css('background', 'rgba(' + this.data.bgcolour + ',0.3)');
   $(this.find('h3')).slabText();
   $('.animate').velocity({ opacity: 1.0 }, { visibility: "visible" });
 };
