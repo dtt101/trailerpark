@@ -1,6 +1,13 @@
 <template name="postPage">
-  <div class="square nolink">
+  <div class="square nolink animate video" style="background-color: {{postColour}}">
     <div class="square-inner">
+      {{#if isVideo}}
+        {{{html}}}
+      {{else}}
+        <a href="{{url}}">
+          <img class="thumb" src="{{thumbnail_url}}" alt="{{title}} - {{domain}}">
+        </a>
+      {{/if}}
     </div>
   </div>
   <div class="square nolink animate">
@@ -10,29 +17,27 @@
       </div>
     </div>
   </div>
-  <a href="{{url}}">{{domain}}</a>
-  <div>
-    <a href="#" class="vote-link {{upvotedClass}}">
-      Love
-    </a>
-    {{pluralize votes "love"}}
+  <div class="square nolink animate">
+    <div class="square-inner" style="background-color: {{postColour}}">
+      <div class="post-content">
+        <h3>Comments</h3>
+      </div>
+    </div>
   </div>
-  <div>
-    {{#if isVideo}}
-      <p>{{{html}}}</p>
-    {{else}}
-      <p><img class="thumb" src="{{thumbnail_url}}" alt="{{title}}"></p>
-    {{/if}}
+  {{#each comments}}
+    <div class="square nolink visible">
+      <div class="square-inner" style="background-color: {{randomColour}}">
+        {{> commentItem}}
+      </div>
+    </div>
+  {{/each}}
+  <div class="square nolink animate">
+    <div class="square-inner">
+      {{#if currentUser}}
+        {{> commentSubmit}}
+      {{else}}
+        <p>Sign in with twitter to post a comment</p>
+      {{/if}}
+    </div>
   </div>
-  <ul class="comments">
-    {{#each comments}}
-      {{> commentItem}}
-    {{/each}}
-  </ul>
-
-  {{#if currentUser}}
-    {{> commentSubmit}}
-  {{else}}
-    <p>Sign in with twitter to post a comment</p>
-  {{/if}}
 </template>
