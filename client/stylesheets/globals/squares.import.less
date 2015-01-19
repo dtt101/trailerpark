@@ -2,8 +2,8 @@
 div.square {
   float:left;
   position: relative;
-  width: 25%;
-  padding-bottom: 25%; /* = width for a 1:1 aspect ratio */
+  width: @square;
+  padding-bottom: @square; /* = width for a 1:1 aspect ratio */
   margin:0;
   overflow:hidden;
   visibility: hidden;
@@ -20,8 +20,16 @@ div.square {
   }
   &:hover {
   	z-index:1000;
-    box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
-    -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
-    -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  }
+}
+
+div.square.nolink {
+  &:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
   }
 }

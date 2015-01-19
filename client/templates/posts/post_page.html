@@ -1,17 +1,29 @@
 <template name="postPage">
-  <h2>{{title}}</h2>
-  <img class="thumb" src="{{thumbnail_url}}" alt="{{title}}">
+  <div class="square nolink">
+    <div class="square-inner">
+    </div>
+  </div>
+  <div class="square nolink animate">
+    <div class="square-inner" style="background-color: {{postColour}}">
+      <div class="post-content">
+        <h3>{{title}}</h3>
+      </div>
+    </div>
+  </div>
   <a href="{{url}}">{{domain}}</a>
-  <p>
+  <div>
     <a href="#" class="vote-link {{upvotedClass}}">
       Love
     </a>
     {{pluralize votes "love"}}
-  </p>
-  {{#if isVideo}}
-    THIS HAS EMBED CODE
-    <p>{{{html}}}</p>
-  {{/if}}
+  </div>
+  <div>
+    {{#if isVideo}}
+      <p>{{{html}}}</p>
+    {{else}}
+      <p><img class="thumb" src="{{thumbnail_url}}" alt="{{title}}"></p>
+    {{/if}}
+  </div>
   <ul class="comments">
     {{#each comments}}
       {{> commentItem}}
