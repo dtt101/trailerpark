@@ -2,27 +2,39 @@
   <div class="header square">
     <div class="square-inner">
       <h1>Trailer Park</h1>
-      <span class="{{activeRouteClass 'home' 'newPosts'}}">
-        <a href="{{pathFor 'newPosts'}}"><i class="fa fa-newspaper-o"></i></a>
-      </span>
-      <span class="{{activeRouteClass 'bestPosts'}}">
-        <a href="{{pathFor 'bestPosts'}}"><i class="fa fa-line-chart"></i></a>
-      </span>
-      {{#if currentUser}}
-        <span class="{{activeRouteClass 'postSubmit'}}">
-          <a href="{{pathFor 'postSubmit'}}"><i class="fa fa-file-video-o"></i></a>
+      <div class="nav">
+        <span class="{{activeRouteClass 'home' 'newPosts'}}">
+          <span class="simptip-position-top" data-tooltip="Fresh">
+            <a href="{{pathFor 'newPosts'}}"><i class="fa fa-newspaper-o"></i></a>
+          </span>
         </span>
-        <span>
-          <a href="#" class="btn-link" id="logout"><i class="fa fa-sign-out"></i></a>
+        <span class="{{activeRouteClass 'bestPosts'}}">
+          <span class="simptip-position-top" data-tooltip="Popular">
+            <a href="{{pathFor 'bestPosts'}}"><i class="fa fa-line-chart"></i></a>
+          </span>
         </span>
-        <ul>
-          <li class="dropdown">
-            {{> notifications}}
-          </li>
-        </ul>
-      {{else}}
-        <a href="#" id="twitterLogin"><i class="fa fa-sign-in"></i></a>
-      {{/if}}
+        {{#if currentUser}}
+          <span class="{{activeRouteClass 'postSubmit'}}">
+            <span class="simptip-position-top" data-tooltip="Submit a trailer">
+              <a href="{{pathFor 'postSubmit'}}"><i class="fa fa-file-video-o"></i></a>
+            </span>
+          </span>
+          <span>
+            <span class="simptip-position-top" data-tooltip="Sign out">
+              <a href="#" class="btn-link" id="logout"><i class="fa fa-sign-out"></i></a>
+            </span>
+          </span>
+          <ul>
+            <li class="dropdown">
+              {{> notifications}}
+            </li>
+          </ul>
+        {{else}}
+          <span class="simptip-position-top" data-tooltip="Sign in">
+            <a href="#" id="twitterLogin"><i class="fa fa-sign-in"></i></a>
+          </span>
+        {{/if}}
+      </div>
     </div>
   </div>
 </template>
