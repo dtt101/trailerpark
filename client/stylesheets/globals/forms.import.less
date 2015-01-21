@@ -1,0 +1,46 @@
+form {
+  margin: 15px 0;
+  label {
+    text-align: center;
+    display: block;
+    color: @white;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 80px;
+  }
+}
+
+div.actions {
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.btn {
+  background: transparent;
+  border: 2px solid @black;
+  display: inline-block;
+  margin: 0 0 0 0;
+  padding: 5px 10px;
+  text-align: center;
+  width: 150px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+  	z-index:1000;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    z-index: 2000;
+    border-color: @white;
+    color: #fff;
+  }
+}

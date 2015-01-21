@@ -25,3 +25,10 @@ Template.postPage.helpers({
     return 'rgba(' + post.bgcolour + ', ' + bgo + ')';
   }
 });
+
+Template.postPage.events({
+  'click #twitterLogin': function(e) {
+    e.preventDefault();
+    Meteor.loginWithTwitter();
+  }
+});
