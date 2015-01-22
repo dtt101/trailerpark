@@ -26,7 +26,7 @@ Template.commentSubmit.events({
     var errors = {};
 
     if (!comment.body) {
-      errors.body = "Please write some content";
+      errors.body = "Yeah, no.";
       return Session.set('commentSubmitErrors', errors);
     }
     Meteor.call('commentInsert', comment, function(error, commentId) {
