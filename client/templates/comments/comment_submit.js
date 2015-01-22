@@ -28,6 +28,9 @@ Template.commentSubmit.events({
     if (!comment.body) {
       errors.body = "Yeah, no.";
       return Session.set('commentSubmitErrors', errors);
+    } else if (comment.body.length > 200) {
+      errors.body = "Short. 200 characters or less pls.";
+      return Session.set('commentSubmitErrors', errors);
     }
     Meteor.call('commentInsert', comment, function(error, commentId) {
       Session.set('commentSubmitErrors', {});
