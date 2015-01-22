@@ -19,7 +19,7 @@ Template.commentSubmit.events({
 
     var $body = $(e.target).find('[name=body]');
     var comment = {
-      body: $body.val(),
+      body: $body.val().trim(),
       postId: template.data._id
     };
 
