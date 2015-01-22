@@ -30,6 +30,7 @@ Template.commentSubmit.events({
       return Session.set('commentSubmitErrors', errors);
     }
     Meteor.call('commentInsert', comment, function(error, commentId) {
+      Session.set('commentSubmitErrors', {});
       if (error) {
         throwError(error.reason);
       } else {
