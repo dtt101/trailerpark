@@ -19,11 +19,16 @@ Template.postPage.helpers({
     return 'rgba(' + this.bgcolour + ', ' + this.bgopacity + ')';
   },
 
-  randomColour: function() {
+  randomPostColour: function() {
+    var bgo = Math.random() * (0.4 - 0.1) + 0.1;
+    return 'rgba(' + this.bgcolour + ', ' + bgo + ')';    
+  },
+
+  commentColour: function() {
     var post = Posts.findOne(this.postId);
     var bgo = Math.random() * (0.4 - 0.1) + 0.1;
     return 'rgba(' + post.bgcolour + ', ' + bgo + ')';
-  }
+  },
 });
 
 Template.postPage.events({

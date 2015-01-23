@@ -32,11 +32,26 @@
       </div>
     </div>
   </div>
-  {{#each comments}}
+  {{#if commentsCount}}
+    {{#each comments}}
+      <div class="square nolink visible">
+        <div class="square-inner comment" style="background-color: {{commentColour}}">
+          {{> commentItem}}
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
     <div class="square nolink visible">
-      <div class="square-inner comment" style="background-color: {{randomColour}}">
-        {{> commentItem}}
+      <div class="square-inner comment" style="background-color: {{randomPostColour}}">
       </div>
     </div>
-  {{/each}}
+    <div class="square nolink visible">
+      <div class="square-inner comment" style="background-color: {{randomPostColour}}">
+      </div>
+    </div>
+    <div class="square nolink visible">
+      <div class="square-inner comment" style="background-color: {{randomPostColour}}">
+      </div>
+    </div>
+  {{/if}}
 </template>
