@@ -15,6 +15,6 @@ http
 embedly
 houston:admin
 momentjs:moment
-percolate:velocityjs
+velocityjs:velocityjs
 fortawesome:fontawesome
 agnito:simptip
