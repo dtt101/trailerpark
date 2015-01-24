@@ -2,6 +2,8 @@
 
 ## Development
 
+TODO: document settings.json and add embed code to trello account
+
 ```
 meteor --settings settings.json
 ```
