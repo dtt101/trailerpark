@@ -1,10 +1,27 @@
 if (!(typeof MochaWeb === 'undefined')){
   MochaWeb.testOnly(function() {
-    describe("Trailer listing", function(){
-      it("should show ten trailers on first load", function() {
-        Meteor.setTimeout(function() {
-          chai.assert.equal(Posts.find().count(), 10);
-        }, 500);
+
+    describe("Trailer listing", function() {
+      before(function(done) {
+        Meteor.autorun(function(c){
+          var posts = Posts.find();
+          if (posts) {
+            c.stop();
+            done();
+          }
+        })
+      });
+
+      it("should show ten trailers on first load", function(done) {
+        chai.assert.equal(Posts.find().count(), 10);
+        done();
+      });
+
+      it("shoud show the number of comments added to a trailer", function(done) {
+        var post = Posts.findOne({title: 'Star Wars: The Force Awakens'});
+        var count = $('#post-' + post._id + ' div.comment a').text().trim();
+        chai.assert.equal(count, "2");
+        done();
       });
 
       // TODO: fix this test, it needs loading time before the assertion
@@ -27,16 +44,6 @@ if (!(typeof MochaWeb === 'undefined')){
 
     describe("New trailers", function() {
       it("shoud allow trailers to be sorted with the latest posted first");
-    });
-
-    describe("Comments", function() {
-      it("shoud show the number of comments added to a trailer", function() {
-        Meteor.setTimeout(function() {
-          var post = Posts.findOne({title: 'Star Wars: The Force Awakens'});
-          var count = $('#post-' + post._id + ' div.comment a').text().trim();
-          chai.assert.equal(count, "2");
-        }, 500);
-      });
     });
 
   });
