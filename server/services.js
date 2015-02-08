@@ -5,7 +5,7 @@ ServiceConfiguration.configurations.remove({
 
 ServiceConfiguration.configurations.insert({
   service: "twitter",
-  consumerKey: 'Dfpa5YsTlzTnHwMFBlSl3syMu',
-  secret: 'krkC3OVCybmBZXTFXlrauBsiToAKA3iBWaHuL5qjDLE3nEZoQF',
+  consumerKey: Meteor.settings.twitter.consumerKey,
+  secret: Meteor.settings.twitter.secret,
   loginStyle: "redirect"
 });
