@@ -19,4 +19,4 @@ velocityjs:velocityjs
 fortawesome:fontawesome
 agnito:simptip
 # Uncomment to run tests
-# mike:mocha
+mike:mocha
