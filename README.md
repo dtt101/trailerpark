@@ -38,7 +38,7 @@ The app uses the ```houston:admin``` package for serverside admin. When you firs
 
 The site uses twitter for authentication
 
-In development you need to create a test application via apps.twitter.com (including the correct callback URL for example 'http://www.trailerpark.io/_oauth/twitter') and add the keys to settings.json as described above.
+In development you need to create a test application via apps.twitter.com (including the correct callback URL for example 'http://localhost:3000/_oauth/twitter') and add the keys to settings.json as described above.
 
 ## Testing
 
