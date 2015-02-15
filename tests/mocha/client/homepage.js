@@ -5,7 +5,7 @@ if (!(typeof MochaWeb === 'undefined')){
       before(function(done) {
         Meteor.autorun(function(c){
           var posts = Posts.find();
-          if (posts) {
+          if (posts.count() >= 10) {
             c.stop();
             done();
           }
@@ -24,13 +24,6 @@ if (!(typeof MochaWeb === 'undefined')){
         done();
       });
 
-      // TODO: fix this test, it needs loading time before the assertion
-      // it("should load ten more posts when pressing next page", function() {
-      //   Meteor.setTimeout(function() {
-      //     $('a.load-more').click();
-      //     chai.assert.equal(Posts.find().count(), 20);
-      //   }, 500);
-      // });
     });
 
     describe("Logging in", function() {
