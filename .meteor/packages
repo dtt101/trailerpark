@@ -18,5 +18,5 @@ momentjs:moment
 velocityjs:velocityjs
 fortawesome:fontawesome
 agnito:simptip
-# Uncomment to run tests
-mike:mocha
+sanjo:jasmine
+velocity:html-reporter
