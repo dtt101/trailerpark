@@ -42,9 +42,9 @@ In development you need to create a test application via apps.twitter.com (inclu
 
 ## Testing
 
-The app uses the Velocity with Mocha test framework - tests are in ```/tests```
+The app uses the Velocity with Jasmine test framework - tests are in ```/tests```
 
-To activate uncomment the ```mike:mocha``` package from ```.meteor/packages``` then
+To activate uncomment the ```sanjo:jasmine``` package from ```.meteor/packages``` then
 run the app as normal
 
 More information here: http://velocity.meteor.com/
